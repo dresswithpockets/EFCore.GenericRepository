@@ -4,11 +4,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace TanvirArjel.EFCore.GenericRepository
 {
-    public interface IQueryRepository
+    public interface IQueryRepository<TContext>
+        where TContext : DbContext
     {
         /// <summary>
         /// Gets <see cref="IQueryable{T}"/> of the entity.

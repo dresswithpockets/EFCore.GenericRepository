@@ -32,8 +32,9 @@ namespace TanvirArjel.EFCore.GenericRepository
             }
 
             services.Add(new ServiceDescriptor(
-                typeof(IRepository),
-                serviceProvider => new Repository(ActivatorUtilities.CreateInstance<TDbContext>(serviceProvider)),
+                typeof(IRepository<TDbContext>),
+                serviceProvider =>
+                    new Repository<TDbContext>(ActivatorUtilities.CreateInstance<TDbContext>(serviceProvider)),
                 lifetime));
 
             return services;

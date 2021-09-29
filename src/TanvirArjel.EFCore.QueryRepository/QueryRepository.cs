@@ -16,7 +16,8 @@ using TanvirArjel.EFCore.GenericRepository.Extensions;
 
 namespace TanvirArjel.EFCore.GenericRepository
 {
-    internal class QueryRepository : IQueryRepository
+    internal class QueryRepository<TContext> : IQueryRepository<TContext>
+        where TContext : DbContext
     {
         private readonly DbContext _dbContext;
 

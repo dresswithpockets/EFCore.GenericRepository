@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>9</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -51,6 +50,8 @@
 		<Authors>TanvirArjel</Authors>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Nullable>disable</Nullable>
+		<TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
 	</PropertyGroup>
 
 	<ItemGroup>
