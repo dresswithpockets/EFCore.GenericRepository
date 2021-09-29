@@ -51,6 +51,17 @@ namespace TanvirArjel.EFCore.GenericRepository
             return primaryKeyValue;
         }
 
+        public async Task InsertAsync(IEnumerable<object> entities, CancellationToken cancellationToken = default)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException(nameof(entities));
+            }
+
+            await _dbContext.AddRangeAsync(entities, cancellationToken).ConfigureAwait(false);
+            await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
         public async Task InsertAsync<T>(IEnumerable<T> entities, CancellationToken cancellationToken = default)
            where T : class
         {

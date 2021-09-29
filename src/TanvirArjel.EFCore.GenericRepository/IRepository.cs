@@ -47,6 +47,8 @@ namespace TanvirArjel.EFCore.GenericRepository
         Task InsertAsync<TEntity>(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
             where TEntity : class;
 
+        Task InsertAsync(IEnumerable<object> entities, CancellationToken cancellationToken = default);
+
         /// <summary>
         /// This method takes <typeparamref name="TEntity"/>, send update operation to the database and returns <see cref="void"/>.
         /// </summary>
